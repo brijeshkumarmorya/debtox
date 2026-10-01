@@ -1,0 +1,88 @@
+{
+  "model_id": "long_method_stacking",
+  "smell_name": "Long Method",
+  "granularity": "method",
+  "model_type": "stacking",
+  "dataset_provenance": "smellycode_plus_plus",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "SLOC",
+    "distinct_operators",
+    "distinct_operands",
+    "total_operators",
+    "total_operands",
+    "vocabulary",
+    "length",
+    "calculated_length",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort",
+    "halstead_time",
+    "halstead_bugs",
+    "cyclomatic_complexity"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.9105,
+    "precision": 0.0686,
+    "recall": 0.1739,
+    "f1": 0.0949,
+    "mcc": 0.0646,
+    "roc_auc": 0.4741,
+    "pr_auc": 0.0577
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-10-01T07:06:54.340307+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        3757,
+        12
+      ],
+      [
+        23,
+        0
+      ]
+    ],
+    [
+      [
+        2454,
+        21
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    [
+      [
+        1030,
+        712
+      ],
+      [
+        76,
+        225
+      ]
+    ],
+    [
+      [
+        1979,
+        31
+      ],
+      [
+        31,
+        1
+      ]
+    ],
+    [
+      [
+        2018,
+        13
+      ],
+      [
+        10,
+        1
+      ]
+    ]
+  ]
+}

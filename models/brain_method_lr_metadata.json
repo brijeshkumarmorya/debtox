@@ -1,0 +1,85 @@
+{
+  "model_id": "brain_method_lr",
+  "smell_name": "Brain Method",
+  "granularity": "method",
+  "model_type": "lr",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "WMC",
+    "CBO",
+    "RFC",
+    "ATFD",
+    "FDP",
+    "SLOC",
+    "LLOC",
+    "cyclomatic_complexity",
+    "MNB",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.9968,
+    "precision": 0.9725,
+    "recall": 0.9906,
+    "f1": 0.9814,
+    "mcc": 0.9797,
+    "roc_auc": 1.0,
+    "pr_auc": 0.9997
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-09-30T19:37:49.877807",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        457,
+        1
+      ],
+      [
+        0,
+        42
+      ]
+    ],
+    [
+      [
+        457,
+        1
+      ],
+      [
+        1,
+        41
+      ]
+    ],
+    [
+      [
+        456,
+        1
+      ],
+      [
+        1,
+        42
+      ]
+    ],
+    [
+      [
+        456,
+        1
+      ],
+      [
+        0,
+        43
+      ]
+    ],
+    [
+      [
+        455,
+        2
+      ],
+      [
+        0,
+        43
+      ]
+    ]
+  ]
+}

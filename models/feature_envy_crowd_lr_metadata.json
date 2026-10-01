@@ -1,0 +1,62 @@
+{
+  "model_id": "feature_envy_crowd_lr",
+  "smell_name": "Feature Envy_crowd",
+  "granularity": "method",
+  "model_type": "lr",
+  "dataset_provenance": "crowdsmelling",
+  "resampling_strategy": "none",
+  "feature_schema": [
+    "SLOC",
+    "cyclomatic_complexity",
+    "MNB",
+    "ATFD",
+    "FDP",
+    "LAA",
+    "WMC",
+    "CBO"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.5788,
+    "precision": 0.5836,
+    "recall": 0.9635,
+    "f1": 0.7269,
+    "mcc": 0.0181,
+    "roc_auc": 0.5409,
+    "pr_auc": 0.6328
+  },
+  "cv_folds": 3,
+  "training_timestamp": "2026-10-01T07:08:24.827775+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        1,
+        45
+      ],
+      [
+        1,
+        63
+      ]
+    ],
+    [
+      [
+        2,
+        44
+      ],
+      [
+        3,
+        61
+      ]
+    ],
+    [
+      [
+        3,
+        43
+      ],
+      [
+        3,
+        61
+      ]
+    ]
+  ]
+}

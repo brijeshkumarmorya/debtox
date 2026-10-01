@@ -1,0 +1,88 @@
+{
+  "model_id": "long_method_xgb",
+  "smell_name": "Long Method",
+  "granularity": "method",
+  "model_type": "xgb",
+  "dataset_provenance": "smellycode_plus_plus",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "SLOC",
+    "distinct_operators",
+    "distinct_operands",
+    "total_operators",
+    "total_operands",
+    "vocabulary",
+    "length",
+    "calculated_length",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort",
+    "halstead_time",
+    "halstead_bugs",
+    "cyclomatic_complexity"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.9014,
+    "precision": 0.0573,
+    "recall": 0.1799,
+    "f1": 0.0866,
+    "mcc": 0.0564,
+    "roc_auc": 0.6675,
+    "pr_auc": 0.0598
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-10-01T07:06:42.173555+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        3754,
+        15
+      ],
+      [
+        23,
+        0
+      ]
+    ],
+    [
+      [
+        2424,
+        51
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    [
+      [
+        1001,
+        741
+      ],
+      [
+        67,
+        234
+      ]
+    ],
+    [
+      [
+        1952,
+        58
+      ],
+      [
+        31,
+        1
+      ]
+    ],
+    [
+      [
+        1998,
+        33
+      ],
+      [
+        10,
+        1
+      ]
+    ]
+  ]
+}

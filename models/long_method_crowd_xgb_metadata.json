@@ -1,0 +1,63 @@
+{
+  "model_id": "long_method_crowd_xgb",
+  "smell_name": "Long Method_crowd",
+  "granularity": "method",
+  "model_type": "xgb",
+  "dataset_provenance": "crowdsmelling",
+  "resampling_strategy": "none",
+  "feature_schema": [
+    "SLOC",
+    "cyclomatic_complexity",
+    "MNB",
+    "ATFD",
+    "FDP",
+    "parameter_count",
+    "WMC",
+    "CBO",
+    "RFC"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.7609,
+    "precision": 0.6883,
+    "recall": 0.7906,
+    "f1": 0.7338,
+    "mcc": 0.5261,
+    "roc_auc": 0.8243,
+    "pr_auc": 0.7155
+  },
+  "cv_folds": 3,
+  "training_timestamp": "2026-10-01T07:08:23.931158+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        182,
+        75
+      ],
+      [
+        26,
+        159
+      ]
+    ],
+    [
+      [
+        208,
+        49
+      ],
+      [
+        51,
+        134
+      ]
+    ],
+    [
+      [
+        181,
+        77
+      ],
+      [
+        39,
+        145
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "model_id": "data_class_xgb",
+  "smell_name": "Data Class",
+  "granularity": "class",
+  "model_type": "xgb",
+  "dataset_provenance": "smellycode_plus_plus",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "SLOC",
+    "distinct_operators",
+    "distinct_operands",
+    "total_operators",
+    "total_operands",
+    "vocabulary",
+    "length",
+    "calculated_length",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort",
+    "halstead_time",
+    "halstead_bugs",
+    "cyclomatic_complexity"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.8946,
+    "precision": 0.1536,
+    "recall": 0.6743,
+    "f1": 0.2338,
+    "mcc": 0.2675,
+    "roc_auc": 0.9155,
+    "pr_auc": 0.3087
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-10-01T07:05:10.630767+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        3288,
+        421
+      ],
+      [
+        15,
+        68
+      ]
+    ],
+    [
+      [
+        2025,
+        381
+      ],
+      [
+        17,
+        58
+      ]
+    ],
+    [
+      [
+        1967,
+        73
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        1819,
+        130
+      ],
+      [
+        43,
+        50
+      ]
+    ],
+    [
+      [
+        1721,
+        227
+      ],
+      [
+        40,
+        54
+      ]
+    ]
+  ]
+}

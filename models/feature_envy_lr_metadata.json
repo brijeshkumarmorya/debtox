@@ -1,0 +1,88 @@
+{
+  "model_id": "feature_envy_lr",
+  "smell_name": "Feature Envy",
+  "granularity": "method",
+  "model_type": "lr",
+  "dataset_provenance": "smellycode_plus_plus",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "SLOC",
+    "distinct_operators",
+    "distinct_operands",
+    "total_operators",
+    "total_operands",
+    "vocabulary",
+    "length",
+    "calculated_length",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort",
+    "halstead_time",
+    "halstead_bugs",
+    "cyclomatic_complexity"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.7939,
+    "precision": 0.0764,
+    "recall": 0.4048,
+    "f1": 0.1191,
+    "mcc": 0.0911,
+    "roc_auc": 0.6834,
+    "pr_auc": 0.0831
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-10-01T07:06:56.278851+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        3368,
+        391
+      ],
+      [
+        23,
+        10
+      ]
+    ],
+    [
+      [
+        2156,
+        315
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    [
+      [
+        755,
+        861
+      ],
+      [
+        37,
+        390
+      ]
+    ],
+    [
+      [
+        1632,
+        369
+      ],
+      [
+        31,
+        10
+      ]
+    ],
+    [
+      [
+        1720,
+        311
+      ],
+      [
+        7,
+        4
+      ]
+    ]
+  ]
+}

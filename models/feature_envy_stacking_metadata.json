@@ -1,0 +1,88 @@
+{
+  "model_id": "feature_envy_stacking",
+  "smell_name": "Feature Envy",
+  "granularity": "method",
+  "model_type": "stacking",
+  "dataset_provenance": "smellycode_plus_plus",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "SLOC",
+    "distinct_operators",
+    "distinct_operands",
+    "total_operators",
+    "total_operands",
+    "vocabulary",
+    "length",
+    "calculated_length",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort",
+    "halstead_time",
+    "halstead_bugs",
+    "cyclomatic_complexity"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.9435,
+    "precision": 0.0235,
+    "recall": 0.0121,
+    "f1": 0.016,
+    "mcc": 0.0042,
+    "roc_auc": 0.5659,
+    "pr_auc": 0.0821
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-10-01T07:08:21.793939+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        3744,
+        15
+      ],
+      [
+        31,
+        2
+      ]
+    ],
+    [
+      [
+        2445,
+        26
+      ],
+      [
+        10,
+        0
+      ]
+    ],
+    [
+      [
+        1609,
+        7
+      ],
+      [
+        427,
+        0
+      ]
+    ],
+    [
+      [
+        1979,
+        22
+      ],
+      [
+        41,
+        0
+      ]
+    ],
+    [
+      [
+        2016,
+        15
+      ],
+      [
+        11,
+        0
+      ]
+    ]
+  ]
+}

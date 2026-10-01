@@ -1,0 +1,41 @@
+services:
+  debtox-api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: debtox-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBTOX_ENV=production
+      - DEBTOX_STORAGE_DIR=/app/storage
+      - DEBTOX_MODELS_DIR=/app/models
+      - CORS_ORIGINS=["http://localhost:3000","http://localhost:8000"]
+    volumes:
+      - ./storage:/app/storage
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./experiments:/app/experiments
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  debtox-ui:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: debtox-ui
+    ports:
+      - "3000:80"
+    depends_on:
+      debtox-api:
+        condition: service_healthy
+    restart: unless-stopped
+
+networks:
+  default:
+    name: debtox-network

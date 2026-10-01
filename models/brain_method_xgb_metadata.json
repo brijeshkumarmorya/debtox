@@ -1,0 +1,85 @@
+{
+  "model_id": "brain_method_xgb",
+  "smell_name": "Brain Method",
+  "granularity": "method",
+  "model_type": "xgb",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "WMC",
+    "CBO",
+    "RFC",
+    "ATFD",
+    "FDP",
+    "SLOC",
+    "LLOC",
+    "cyclomatic_complexity",
+    "MNB",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.9992,
+    "precision": 1.0,
+    "recall": 0.9907,
+    "f1": 0.9952,
+    "mcc": 0.9949,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-09-30T19:37:51.840900",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        458,
+        0
+      ],
+      [
+        0,
+        42
+      ]
+    ],
+    [
+      [
+        458,
+        0
+      ],
+      [
+        0,
+        42
+      ]
+    ],
+    [
+      [
+        457,
+        0
+      ],
+      [
+        2,
+        41
+      ]
+    ],
+    [
+      [
+        457,
+        0
+      ],
+      [
+        0,
+        43
+      ]
+    ],
+    [
+      [
+        457,
+        0
+      ],
+      [
+        0,
+        43
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "model_id": "god_class_rf",
+  "smell_name": "God Class",
+  "granularity": "class",
+  "model_type": "rf",
+  "dataset_provenance": "smellycode_plus_plus",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "SLOC",
+    "distinct_operators",
+    "distinct_operands",
+    "total_operators",
+    "total_operands",
+    "vocabulary",
+    "length",
+    "calculated_length",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort",
+    "halstead_time",
+    "halstead_bugs",
+    "cyclomatic_complexity"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.9426,
+    "precision": 0.4217,
+    "recall": 0.644,
+    "f1": 0.4995,
+    "mcc": 0.4928,
+    "roc_auc": 0.9644,
+    "pr_auc": 0.6635
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-10-01T07:03:37.158023+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        3443,
+        182
+      ],
+      [
+        4,
+        163
+      ]
+    ],
+    [
+      [
+        2282,
+        53
+      ],
+      [
+        45,
+        101
+      ]
+    ],
+    [
+      [
+        1962,
+        81
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        1707,
+        172
+      ],
+      [
+        16,
+        147
+      ]
+    ],
+    [
+      [
+        1813,
+        86
+      ],
+      [
+        50,
+        93
+      ]
+    ]
+  ]
+}

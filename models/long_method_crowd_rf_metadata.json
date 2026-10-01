@@ -1,0 +1,63 @@
+{
+  "model_id": "long_method_crowd_rf",
+  "smell_name": "Long Method_crowd",
+  "granularity": "method",
+  "model_type": "rf",
+  "dataset_provenance": "crowdsmelling",
+  "resampling_strategy": "none",
+  "feature_schema": [
+    "SLOC",
+    "cyclomatic_complexity",
+    "MNB",
+    "ATFD",
+    "FDP",
+    "parameter_count",
+    "WMC",
+    "CBO",
+    "RFC"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.7609,
+    "precision": 0.6879,
+    "recall": 0.7924,
+    "f1": 0.7343,
+    "mcc": 0.5266,
+    "roc_auc": 0.8229,
+    "pr_auc": 0.7171
+  },
+  "cv_folds": 3,
+  "training_timestamp": "2026-10-01T07:08:23.360971+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        181,
+        76
+      ],
+      [
+        27,
+        158
+      ]
+    ],
+    [
+      [
+        208,
+        49
+      ],
+      [
+        51,
+        134
+      ]
+    ],
+    [
+      [
+        181,
+        77
+      ],
+      [
+        37,
+        147
+      ]
+    ]
+  ]
+}

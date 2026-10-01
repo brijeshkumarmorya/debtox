@@ -1,0 +1,217 @@
+# ==============================================================================
+# DebtOx — Code-First .gitignore
+#
+# Track:
+#   Actual source code, tests, required configs, dependency manifests,
+#   Docker/deployment files, and runtime model files required by the app.
+#
+# Ignore:
+#   Local environments, caches, generated outputs, datasets, cloned repos,
+#   research artifacts, papers, builds, logs, and temporary files.
+# ==============================================================================
+
+
+# ------------------------------------------------------------------------------
+# 1. OS / IDE / Editor
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+
+# ------------------------------------------------------------------------------
+# 2. Python
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+ENV/
+env/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+
+*.egg-info/
+.eggs/
+*.egg
+
+
+# ------------------------------------------------------------------------------
+# 3. Environment Variables / Secrets
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+!.env.example
+
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+
+
+# ------------------------------------------------------------------------------
+# 4. Logs / Runtime / Temporary Files
+# ------------------------------------------------------------------------------
+*.log
+*.pid
+
+logs/
+tmp/
+temp/
+
+storage/analyses/*
+storage/reports/*
+
+!storage/analyses/.gitkeep
+!storage/reports/.gitkeep
+
+
+# ------------------------------------------------------------------------------
+# 5. Node / Frontend
+# ------------------------------------------------------------------------------
+node_modules/
+frontend/node_modules/
+
+frontend/dist/
+frontend/.vite/
+
+dist/
+build/
+
+.npm/
+.eslintcache
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ------------------------------------------------------------------------------
+# 6. Datasets
+# ------------------------------------------------------------------------------
+# Downloaded / generated research datasets
+data/raw/
+data/processed/
+data/external/
+
+# Local repositories used by analysis/demo
+data/demo_repos/
+data/cloned_repos/
+data/sample_repo/
+
+# Temporary analysis data
+data/temp/
+
+
+# ------------------------------------------------------------------------------
+# 7. Research Experiments / Generated Results
+# ------------------------------------------------------------------------------
+experiments/final/
+experiments/results/
+experiments/runs/
+
+
+# ------------------------------------------------------------------------------
+# 8. ML / Generated Training Artifacts
+# ------------------------------------------------------------------------------
+# Keep /models/ itself tracked because the current DebtOx application
+# contains runtime model files there.
+
+models/checkpoints/
+models/*.tmp
+models/*.bak
+
+# Training-generated logs / reports
+ml/reports/*
+
+
+# ------------------------------------------------------------------------------
+# 9. Research Documents / Paper Outputs
+# ------------------------------------------------------------------------------
+# The repository is code-first; research/paper material is kept locally
+# rather than committed to the application repository.
+
+docs/
+*.pdf
+
+problem_formulation_and_rq.md
+project_synopsis.md
+research_writeup_1.md
+
+
+# ------------------------------------------------------------------------------
+# 10. LaTeX Build Artifacts
+# ------------------------------------------------------------------------------
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
+
+
+# ------------------------------------------------------------------------------
+# 11. Jupyter / Notebook Runtime
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+
+
+# ------------------------------------------------------------------------------
+# 12. Local Databases / Generated Database Files
+# ------------------------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+
+
+# ------------------------------------------------------------------------------
+# 13. Profiling / Debug / Temporary Outputs
+# ------------------------------------------------------------------------------
+*.prof
+*.dump
+*.bak
+*.tmp
+
+
+# ------------------------------------------------------------------------------
+# 14. Local Generated Archives
+# ------------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz

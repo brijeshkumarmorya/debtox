@@ -1,0 +1,86 @@
+{
+  "model_id": "brain_class_rf",
+  "smell_name": "Brain Class",
+  "granularity": "class",
+  "model_type": "rf",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "WMC",
+    "CBO",
+    "LCOM5",
+    "RFC",
+    "DIT",
+    "NOC",
+    "SLOC",
+    "LLOC",
+    "cyclomatic_complexity",
+    "MNB",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "mcc": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-09-30T19:37:34.376121",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        378,
+        0
+      ],
+      [
+        0,
+        22
+      ]
+    ],
+    [
+      [
+        378,
+        0
+      ],
+      [
+        0,
+        22
+      ]
+    ],
+    [
+      [
+        378,
+        0
+      ],
+      [
+        0,
+        22
+      ]
+    ],
+    [
+      [
+        377,
+        0
+      ],
+      [
+        0,
+        23
+      ]
+    ],
+    [
+      [
+        377,
+        0
+      ],
+      [
+        0,
+        23
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "model_id": "brain_method_lgb",
+  "smell_name": "Brain Method",
+  "granularity": "method",
+  "model_type": "lgb",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "WMC",
+    "CBO",
+    "RFC",
+    "ATFD",
+    "FDP",
+    "SLOC",
+    "LLOC",
+    "cyclomatic_complexity",
+    "MNB",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "mcc": 1.0,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-09-30T19:37:52.831234",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        458,
+        0
+      ],
+      [
+        0,
+        42
+      ]
+    ],
+    [
+      [
+        458,
+        0
+      ],
+      [
+        0,
+        42
+      ]
+    ],
+    [
+      [
+        457,
+        0
+      ],
+      [
+        0,
+        43
+      ]
+    ],
+    [
+      [
+        457,
+        0
+      ],
+      [
+        0,
+        43
+      ]
+    ],
+    [
+      [
+        457,
+        0
+      ],
+      [
+        0,
+        43
+      ]
+    ]
+  ]
+}

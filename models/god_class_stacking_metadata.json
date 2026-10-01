@@ -1,0 +1,88 @@
+{
+  "model_id": "god_class_stacking",
+  "smell_name": "God Class",
+  "granularity": "class",
+  "model_type": "stacking",
+  "dataset_provenance": "smellycode_plus_plus",
+  "resampling_strategy": "smote",
+  "feature_schema": [
+    "SLOC",
+    "distinct_operators",
+    "distinct_operands",
+    "total_operators",
+    "total_operands",
+    "vocabulary",
+    "length",
+    "calculated_length",
+    "halstead_volume",
+    "halstead_difficulty",
+    "halstead_effort",
+    "halstead_time",
+    "halstead_bugs",
+    "cyclomatic_complexity"
+  ],
+  "evaluation_metrics": {
+    "accuracy": 0.955,
+    "precision": 0.5059,
+    "recall": 0.6175,
+    "f1": 0.5361,
+    "mcc": 0.5296,
+    "roc_auc": 0.9707,
+    "pr_auc": 0.7322
+  },
+  "cv_folds": 5,
+  "training_timestamp": "2026-10-01T07:03:53.997561+00:00",
+  "random_seed": 42,
+  "confusion_matrices": [
+    [
+      [
+        3488,
+        137
+      ],
+      [
+        5,
+        162
+      ]
+    ],
+    [
+      [
+        2325,
+        10
+      ],
+      [
+        48,
+        98
+      ]
+    ],
+    [
+      [
+        1993,
+        50
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        1735,
+        144
+      ],
+      [
+        23,
+        140
+      ]
+    ],
+    [
+      [
+        1840,
+        59
+      ],
+      [
+        59,
+        84
+      ]
+    ]
+  ]
+}
