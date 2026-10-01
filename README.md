@@ -93,6 +93,7 @@ DebtOx currently focuses its empirical ML workflow on four smells:
 
 ```mermaid
 flowchart TD
+
     Repo["Java Repository<br/>(Local Path or Git URL)"]
 
     Repo --> AST["Java AST Parser<br/>(javalang)"]
@@ -100,28 +101,32 @@ flowchart TD
 
     AST --> Metrics["Software Metrics<br/>(CK, Halstead, Complexity, LOC)"]
 
-    Metrics --> ML["ML Smell Detection<br/>(RF, XGBoost, LightGBM)"]
+    Metrics --> ML["ML Smell Detection<br/>(Random Forest, XGBoost, LightGBM)"]
     Metrics --> Fallback["Deterministic Metric<br/>Fallback"]
 
-    ML --> Smells["Detected Smells"]
+    ML --> Smells["Detected Code Smells"]
     Fallback --> Smells
 
-    Metrics --> TDP["TDP<br/>(Model-Based Effort & Cost)"]
-    Git --> TDI["TDI<br/>(Churn-Based Maintenance Friction)"]
+    Metrics --> TDP["Technical Debt Principal<br/>(Model-Based Effort & Cost)"]
+    Smells --> TDP
 
-    ML --> SHAP["TreeSHAP<br/>(Feature Contributions)"]
+    Git --> TDI["Technical Debt Interest<br/>(Churn-Based Maintenance Friction)"]
 
-    Smells --> Risk["Risk Prioritization"]
+    ML --> SHAP["TreeSHAP Explainability<br/>(Feature Contributions)"]
+
+    Smells --> Risk["Risk Prioritization<br/>(Composite Risk Score)"]
     TDP --> Risk
     TDI --> Risk
 
-    Risk --> API["FastAPI"]
+    Risk --> API["FastAPI REST API"]
     SHAP --> API
     Smells --> API
 
     API --> UI["React Web Dashboard"]
+
     Risk --> CLI["DebtOx CLI"]
     SHAP --> CLI
+    Smells --> CLI
 ```
 
 ---
@@ -182,7 +187,7 @@ DebtOx/
 ### 1. Clone and install
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/brijeshkumarmorya/debtox.git
 cd debtox
 
 python3 -m venv .venv
