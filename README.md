@@ -2,75 +2,90 @@
 
 # DebtOx
 
-### Intelligent Code Smell Prediction & Technical Debt Quantification Platform
+### Intelligent Code Smell Detection & Technical Debt Analysis for Java
 
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React 19](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+DebtOx analyzes Java repositories, extracts software metrics, detects code smells with machine learning, measures technical debt, mines Git history, and explains model predictions.
 
-<p align="center">
-  <b>DebtOx</b> is a production-grade software intelligence platform for Java repositories.<br/>
-  It combines <b>Abstract Syntax Tree (AST) parsing</b>, <b>Git evolutionary history</b>, <b>machine learning-based code smell detection</b>, and <b>parametric financial modeling</b> to identify software debt and prioritize refactoring before technical debt compounds.
+<p>
+  <a href="#-quick-start">Quick Start</a> ·
+  <a href="#-how-it-works">How It Works</a> ·
+  <a href="#-supported-code-smells">Supported Smells</a> ·
+  <a href="#-cli">CLI</a> ·
+  <a href="#-api">API</a>
 </p>
 
-[Quick Start](#-quick-start) • [How It Works](#-how-it-works) • [Supported Smells](#-supported-code-smells) • [CLI](#-command-line-interface-cli) • [REST API](#-rest-api-reference) • [Docker](#3-docker-compose-production-ready)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 </div>
 
 ---
 
-## ⚡ The DebtOx Workflow
+## ✦ Overview
 
-```text
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Analyze Code   │ ──► │  Detect Smells   │ ──► │  Measure Debt   │ ──► │ Understand Risk  │ ──► │ Decide What Fix │
-│                 │     │                  │     │                 │     │                  │     │                 │
-│ Java AST + Git  │     │ ML Classifiers + │     │  TDP Effort (h) │     │ Composite Score  │     │ SHAP Insights & │
-│ Churn & Metrics │     │ Heuristic Rules  │     │  TDI Churn Tax  │     │ 0 to 100 Scale   │     │ Guided Actions  │
-└─────────────────┘     └──────────────────┘     └─────────────────┘     └──────────────────┘     └─────────────────┘
-```
+DebtOx is a software analysis platform built for Java codebases. It combines static source analysis, Git evolution data, machine learning, technical-debt estimation, and explainability in one workflow.
+
+The goal is simple: help developers understand **where the code has problems, why those problems were detected, how much remediation effort may be involved, and which components deserve attention first**.
 
 ---
 
-## ✨ Key Capabilities
+## ⚡ What DebtOx Does
 
-| Capability | What It Does | Why It Matters |
-| :--- | :--- | :--- |
-| 🔍 **Zero-Build Static AST Analysis** | Parses Java 8–17 source files via `javalang` without requiring Maven, Gradle, or compilation. | Analyze any repository instantly, even if dependencies or JDK configurations are missing. |
-| 📊 **Complete Metric Extraction** | Computes Chidamber & Kemerer (CK) metrics (WMC, CBO, RFC, LCOM5, DIT, NOC), Halstead volume/effort, and cyclomatic complexity. | Captures coupling, cohesion, inheritance depth, and cognitive complexity at class and method levels. |
-| 🧬 **Git History & Churn Mining** | Mines commit logs for line additions, deletions, hunks, and net churn using `GitPython`. | Distinguishes dormant complex code from active, highly volatile hotspots that cause defects. |
-| 🤖 **Dual-Layer Smell Detection** | Evaluates components using trained ML models (Random Forest, XGBoost, LightGBM) with deterministic rule fallbacks. | Combines empirical ML probability scores with guaranteed fallback reliability when model weights are not loaded. |
-| ⏱️ **Parametric Debt Principal (TDP)** | Models remediation effort in engineering hours using COCOMO II maintenance effort equations and converts to USD cost. | Replaces arbitrary SonarQube flat-minute rules with size- and complexity-adjusted effort estimates. |
-| 📈 **Longitudinal Debt Interest (TDI)** | Quantifies the ongoing maintenance penalty by comparing excess churn in smelly components against clean peers. | Demonstrates the compounding operational friction and developer time lost to code smells over time. |
-| 🎯 **Actionable Risk Prioritization** | Scores every component on a normalized 0–100 scale balancing smell probability, severity, TDP, and churn. | Focus developer attention on the 5% of components generating 80% of maintenance risk. |
-| 💡 **Explainable AI (TreeSHAP)** | Extracts metric-level feature contributions explaining *why* a component was classified as smelly. | Developers receive clear, plain-language refactoring advice rather than black-box score numbers. |
+```text
+Java Repository
+      │
+      ├── Source Code ──► AST Parsing ──► Software Metrics
+      │                                      │
+      │                                      ▼
+      │                              Code Smell Detection
+      │                                      │
+      └── Git History ──► Churn / Evolution ┘
+                                             │
+                                             ▼
+                                  Technical Debt Analysis
+                                      ├── TDP
+                                      ├── TDI
+                                      └── Risk Priority
+                                             │
+                                             ▼
+                                  SHAP Explainability
+                                             │
+                           ┌─────────────────┴─────────────────┐
+                           ▼                                   ▼
+                     Web Dashboard                           CLI / API
+```
+
+### Core capabilities
+
+| Capability | Description |
+|---|---|
+| 🔍 Static Analysis | Parses Java source and extracts structural, size, and complexity metrics without requiring project compilation. |
+| 🧬 Git Evolution | Mines commits, additions, deletions, hunks, and churn for repository evolution analysis. |
+| 🤖 Smell Detection | Uses trained ML models with deterministic metric-based fallbacks. |
+| ⏱️ TDP | Estimates model-based remediation effort and cost using the DebtOx technical-debt model. |
+| 📈 TDI | Uses historical churn to estimate recurring maintenance friction. |
+| 🎯 Risk Prioritization | Produces a normalized risk score to help prioritize components for investigation. |
+| 💡 Explainability | Uses TreeSHAP to show which features contributed to ML predictions. |
+| 🌐 Multiple Interfaces | Provides a React web dashboard, FastAPI backend, and terminal CLI. |
 
 ---
 
 ## 🔬 Supported Code Smells
 
-DebtOx categorizes smell detections into **Class-Level** architectural smells and **Method-Level** procedural smells:
+DebtOx currently focuses its empirical ML workflow on four smells:
 
-### Class-Level Smells
+| Code Smell | Level | Description |
+|---|---|---|
+| **God Class** | Class | A class that centralizes excessive responsibility and becomes difficult to maintain. |
+| **Data Class** | Class | A class dominated by stored data and accessors with comparatively limited behavior. |
+| **Long Method** | Method | A method whose size, control flow, or complexity makes it difficult to understand and maintain. |
+| **Feature Envy** | Method | A method that depends heavily on data or behavior belonging to another class. |
 
-| Code Smell | Architectural Symptoms | Primary Metrics | Detection Strategy |
-| :--- | :--- | :--- | :--- |
-| **God Class** | Monolithic class centralizing too much system responsibility; low cohesion. | `WMC > 35`, `CBO > 12`, `SLOC > 250` | ML Classifier (RF / XGB) + Fallback |
-| **Data Class** | Passive data holder containing fields and getters/setters with minimal behavior. | `WMC < 12`, `LCOM5 > 0.70`, `CBO < 6` | ML Classifier (RF / XGB) + Fallback |
-| **Brain Class** | Overly complex class that accumulates complex algorithmic state and logic. | `WMC > 45`, `MNB >= 4`, `SLOC > 300` | Deterministic Heuristic Baseline |
-
-### Method-Level Smells
-
-| Code Smell | Architectural Symptoms | Primary Metrics | Detection Strategy |
-| :--- | :--- | :--- | :--- |
-| **Long Method** | Bloated method with excessive lines of code, deeply nested control flow, and multiple duties. | `SLOC > 50`, `Complexity > 10`, `MNB >= 3` | ML Classifier (LGB / RF) + Fallback |
-| **Feature Envy** | Method that accesses data or calls methods of another class more than its own. | `ATFD > 5`, `FDP < 0.33`, `CBO > 5` | ML Classifier (LR / RF) + Fallback |
-| **Brain Method** | Excessively complex method containing numerous conditionals and high cognitive load. | `Cyclomatic > 15`, `MNB >= 4`, `SLOC > 65` | Deterministic Heuristic Baseline |
+> **Research scope:** Brain Class and Brain Method are not included in the verified empirical smell set because validated public ground-truth labels are unavailable in the benchmark data used by DebtOx.
 
 ---
 
@@ -78,102 +93,78 @@ DebtOx categorizes smell detections into **Class-Level** architectural smells an
 
 ```mermaid
 flowchart TD
-    subgraph Input ["1. Input Source"]
-        Repo["Java Source Code\n(Local Path or Git URL)"]
-        GitHistory["Git Commit Log\n(Diffs, Hunks & Net Churn)"]
-    end
+    Repo["Java Repository<br/>(Local Path or Git URL)"]
 
-    subgraph Extraction ["2. Extraction Engine"]
-        AST["Javalang Parser\n(AST & Symbol Visitor)"]
-        Metrics["Software Metrics\n(CK, Halstead, Complexity, LOC)"]
-        Miner["Git Evolution Miner\n(Volatility & Touch Frequencies)"]
-        
-        Repo --> AST --> Metrics
-        GitHistory --> Miner
-    end
+    Repo --> AST["Java AST Parser<br/>(javalang)"]
+    Repo --> Git["Git Evolution Miner<br/>(Commits, Diffs, Churn)"]
 
-    subgraph Inference ["3. Smell Inference"]
-        ML["ML Classifiers\n(Random Forest / XGBoost / LightGBM)"]
-        Fallback["Deterministic Rule Fallback\n(Metric Threshold Baselines)"]
-        
-        Metrics --> ML
-        Metrics --> Fallback
-    end
+    AST --> Metrics["Software Metrics<br/>(CK, Halstead, Complexity, LOC)"]
 
-    subgraph DebtEngine ["4. Technical Debt Engine"]
-        TDP["Technical Debt Principal\n(COCOMO II Effort & Cost)"]
-        TDI["Technical Debt Interest\n(Excess Churn Tax)"]
-        SHAP["SHAP Explainability\n(Feature Attributions & Advice)"]
-        Risk["Risk Prioritization\n(Normalized 0–100 Score)"]
-        
-        ML & Fallback --> TDP
-        Miner --> TDI
-        TDP & TDI --> Risk
-        Metrics & ML --> SHAP
-    end
+    Metrics --> ML["ML Smell Detection<br/>(RF, XGBoost, LightGBM)"]
+    Metrics --> Fallback["Deterministic Metric<br/>Fallback"]
 
-    subgraph Interfaces ["5. Delivery"]
-        API["FastAPI REST Endpoints"]
-        UI["React 19 Web Dashboard"]
-        CLI["debt-ox Terminal CLI"]
-        
-        Risk & SHAP --> API --> UI
-        Risk & SHAP --> CLI
-    end
+    ML --> Smells["Detected Smells"]
+    Fallback --> Smells
+
+    Metrics --> TDP["TDP<br/>(Model-Based Effort & Cost)"]
+    Git --> TDI["TDI<br/>(Churn-Based Maintenance Friction)"]
+
+    ML --> SHAP["TreeSHAP<br/>(Feature Contributions)"]
+
+    Smells --> Risk["Risk Prioritization"]
+    TDP --> Risk
+    TDI --> Risk
+
+    Risk --> API["FastAPI"]
+    SHAP --> API
+    Smells --> API
+
+    API --> UI["React Web Dashboard"]
+    Risk --> CLI["DebtOx CLI"]
+    SHAP --> CLI
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-<div align="center">
-
 | Layer | Technologies |
-| :--- | :--- |
-| **Backend & REST API** | `Python 3.10+` `FastAPI 0.115+` `Uvicorn` `Pydantic v2` `pydantic-settings` |
-| **AST & Git Mining** | `javalang 0.13` (Zero-compilation Java AST parser) `GitPython 3.1` |
-| **ML & Explainability** | `scikit-learn 1.5+` `XGBoost 2.1+` `LightGBM 4.5+` `SHAP 0.45+` `pandas` `numpy` |
-| **Frontend UI** | `React 19` `TypeScript 5.7` `Vite 6` `Tailwind CSS 3.4` `Lucide Icons` |
-| **CLI & Output** | `Typer 0.12+` `Rich 13.7+` |
-| **Testing & Infra** | `Pytest 8.0+` `HTTPX` `Docker` `Docker Compose` |
-
-</div>
+|---|---|
+| Backend & API | Python, FastAPI, Uvicorn, Pydantic |
+| Java Analysis | javalang, AST visitors |
+| Git Mining | GitPython |
+| Machine Learning | scikit-learn, XGBoost, LightGBM |
+| Explainability | SHAP / TreeSHAP |
+| Data & Statistics | Pandas, NumPy, SciPy |
+| Frontend | React, TypeScript, Vite, Tailwind CSS, Lucide Icons |
+| CLI | Typer, Rich |
+| Testing | Pytest, HTTPX |
+| Deployment | Docker, Docker Compose |
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-debtox/
-├── analyzer/                 # Static analysis & repository mining
-│   ├── extraction/           # Metrics extraction coordinator
-│   ├── git/                  # Git commit, hunk & churn miner
-│   ├── java/                 # Javalang AST traversal & lexical visitor
-│   └── metrics/              # Structural (CK), complexity & Halstead calculators
-├── backend/                  # FastAPI REST backend
+DebtOx/
+├── analyzer/                 # Java AST analysis, metrics, and Git mining
+├── backend/                  # FastAPI application and analysis services
 │   ├── app/
-│   │   ├── api/v1/           # API routes (/analyze, /analyses, /health, /debt)
-│   │   ├── core/             # Pydantic configuration & environment settings
-│   │   ├── debt/             # TDP (COCOMO II), TDI (churn tax) & risk engines
-│   │   ├── explainability/   # TreeSHAP feature attributions & narratives
-│   │   ├── ml/               # Smell inference engine & heuristic fallbacks
-│   │   ├── schemas/          # Analysis request, response & metric schemas
-│   │   └── services/         # Asynchronous analysis orchestration
-│   └── tests/                # Comprehensive unit and integration test suite
-├── cli/                      # Terminal interface commands (Typer + Rich)
-├── frontend/                 # React 19 + TypeScript + Vite web dashboard
-│   ├── src/
-│   │   ├── components/       # UI elements (Navbar, ComponentModal, Cards)
-│   │   ├── pages/            # Views (AnalyzePage, IssuesPage, ProjectsPage)
-│   │   └── services/         # Axios/Fetch API client bindings
-├── ml/                       # Machine learning pipelines, datasets & training
-├── models/                   # Pre-trained model directory placeholder
-├── storage/                  # Runtime analysis job store & report outputs
-├── debt-ox                   # CLI executable launcher script
-├── docker-compose.yml        # Multi-container orchestration (API + Web UI)
-├── Dockerfile                # Multi-stage production container build
-├── Makefile                  # Developer task automation (install, test, run)
-└── requirements.txt          # Python backend dependencies
+│   └── tests/                # Backend test suite
+├── cli/                      # Command-line interface
+├── frontend/                 # React web dashboard
+├── ml/                       # ML data, training, validation, and pipelines
+├── models/                   # Runtime ML model artifacts
+├── storage/                  # Local runtime analysis storage
+├── scripts/                  # Reproducibility, analysis, and research scripts
+├── data/                     # Local datasets and analysis repositories
+├── experiments/              # Generated experiment results and figures
+├── docs/                     # Project and research documentation
+├── debt-ox                   # CLI launcher
+├── Dockerfile                # Container build
+├── docker-compose.yml        # Container orchestration
+├── Makefile                  # Common developer commands
+└── requirements.txt          # Python dependencies
 ```
 
 ---
@@ -181,256 +172,191 @@ debtox/
 ## 🚀 Quick Start
 
 ### Prerequisites
-- **Python**: `3.10` or higher (`3.11` recommended)
-- **Node.js**: `18.0` or higher with `npm`
-- **Git**: Installed and accessible via PATH
 
----
+- Python 3.10+
+- Node.js 18+
+- npm
+- Git
+- Docker and Docker Compose (optional)
 
-### 1. Local Unified Run (Recommended)
-
-Run both the FastAPI backend and built React web dashboard together on **port 8000**:
+### 1. Clone and install
 
 ```bash
-# 1. Clone repository
-git clone https://github.com/debtox/debtox.git
+git clone <YOUR_REPOSITORY_URL>
 cd debtox
 
-# 2. Create and activate Python virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-# 3. Install Python dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
+```
 
-# 4. Build frontend production assets
+### 2. Build the frontend
+
+```bash
 cd frontend
 npm install
 npm run build
 cd ..
+```
 
-# 5. Launch DebtOx (serves both Web UI and REST API)
+### 3. Start DebtOx
+
+```bash
 python3 -m uvicorn backend.app.main:app --host 0.0.0.0 --port 8000
 ```
 
-> [!TIP]
-> Open **[http://localhost:8000](http://localhost:8000)** to view the web dashboard.
-> Interactive Swagger API docs are available at **[http://localhost:8000/docs](http://localhost:8000/docs)**.
+Open:
 
-Or simply use the `Makefile`:
+- Web dashboard: `http://localhost:8000`
+- Swagger UI: `http://localhost:8000/docs`
+- ReDoc: `http://localhost:8000/redoc`
+
+### Makefile shortcuts
+
 ```bash
-make install        # Install backend & frontend packages
-make build-frontend # Build frontend bundle
-make run            # Run unified server on :8000
+make install
+make build-frontend
+make run
 ```
 
----
-
-### 2. Development Mode (Hot Reload)
-
-For active code changes with automatic reloading:
+### Development mode
 
 ```bash
-# Terminal 1: Backend API (runs on http://localhost:8000 with auto-reload)
 make run-api
-
-# Terminal 2: Frontend Dev Server (runs on http://localhost:5173 with Vite HMR)
 make run-ui
 ```
 
 ---
 
-### 3. Docker Compose (Production Ready)
+## 🐳 Docker
 
-Run the containerized stack without installing local Python or Node dependencies:
+To run the containerized stack:
 
 ```bash
-# Build and run containers in background
 docker compose up -d --build
+```
 
-# View container logs
+Useful commands:
+
+```bash
 docker compose logs -f
-
-# Shut down
 docker compose down
 ```
 
-| Service | Port | Description |
-| :--- | :--- | :--- |
-| **Web Dashboard** | `http://localhost:3000` | Nginx-hosted React 19 Frontend |
-| **REST API & Swagger** | `http://localhost:8000/docs` | FastAPI Application & ML Engine |
-
 ---
 
-## 💻 Command Line Interface (CLI)
+## 💻 CLI
 
-DebtOx includes an executable CLI (`./debt-ox`) built with `Typer` and `Rich`:
+DebtOx also provides a terminal interface through `./debt-ox`.
 
 ```bash
-# Make CLI executable
 chmod +x debt-ox
-
-# Verify installation
 ./debt-ox version
 ```
 
-### Common Commands
+### Common commands
 
 ```bash
-# 1. Analyze a local Java repository
+# Analyze a Java repository
 ./debt-ox analyze /path/to/java/project
 
-# 2. Output formatted JSON (ideal for CI/CD pipelines)
+# JSON output
 ./debt-ox analyze /path/to/java/project --format json
 
-# 3. Quick mode (skips Git churn history for fast scans)
+# Quick analysis without Git history processing
 ./debt-ox analyze /path/to/java/project --mode quick
 
-# 4. View SHAP feature attributions and recommendations
+# Explain detected components
 ./debt-ox explain <analysis_id> --top 5
 
-# 5. Export analysis results to a standalone JSON report
+# Export an analysis report
 ./debt-ox report <analysis_id> --output debt_report.json
 ```
 
-<details>
-<summary><b>🔍 View Full CLI Command Reference</b></summary>
+For all available commands:
 
-```text
-Usage: ./debt-ox [COMMAND] [OPTIONS]
-
-Commands:
-  version                Display DebtOx system and API version.
-  analyze <TARGET>       Analyze a Java project directory or Git URL.
-    -b, --branch         Git branch to checkout.
-    -m, --mode           Analysis mode: 'quick', 'full' (default), or 'research'.
-    -c, --commits        Max Git commit history depth (default: 100).
-    -f, --format         Output format: 'table' (default) or 'json'.
-  explain <ANALYSIS_ID>  Print SHAP metric attributions for detected smells.
-    -t, --top            Number of top-risk components to explain (default: 5).
-  report <ANALYSIS_ID>   Export complete analysis payload to JSON.
-    -o, --output         Output filename (defaults to report_<id>.json).
-  train                  Run offline ML cross-validation and benchmark trainer.
+```bash
+./debt-ox --help
 ```
-</details>
 
 ---
 
-## 🌐 REST API Reference
+## 🌐 API
 
-The FastAPI backend exposes RESTful endpoints at `/api/v1`:
+The backend exposes a REST API under `/api/v1`.
 
-```bash
-# Check service health and loaded models
-curl -s http://localhost:8000/api/v1/health | jq .
-```
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/v1/health` | Service health and model status |
+| `GET` | `/api/v1/version` | Application version information |
+| `POST` | `/api/v1/analyze` | Start repository analysis |
+| `GET` | `/api/v1/analyses` | List analyses |
+| `GET` | `/api/v1/analyses/{id}` | Retrieve an analysis |
+| `GET` | `/api/v1/analyses/{id}/summary` | Retrieve analysis summary |
+| `GET` | `/api/v1/analyses/{id}/components` | Inspect analyzed components |
+| `GET` | `/api/v1/analyses/{id}/smells` | Retrieve smell counts |
+| `GET` | `/api/v1/analyses/{id}/debt` | Retrieve debt estimates |
+| `GET` | `/api/v1/analyses/{id}/explanations` | Retrieve SHAP explanations |
+| `GET` | `/api/v1/models` | Retrieve loaded model metadata |
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/api/v1/health` | Service health status and loaded model count |
-| `GET` | `/api/v1/version` | Version information |
-| `POST` | `/api/v1/analyze` | Submit repository for asynchronous analysis (returns job ID) |
-| `GET` | `/api/v1/analyses` | List recent analysis jobs |
-| `GET` | `/api/v1/analyses/{id}` | Get complete analysis summary and component details |
-| `GET` | `/api/v1/analyses/{id}/summary` | Get lightweight summary without component arrays |
-| `GET` | `/api/v1/analyses/{id}/components` | Filter components by smell, granularity, or risk score |
-| `GET` | `/api/v1/analyses/{id}/smells` | Aggregated smell counts across the repository |
-| `GET` | `/api/v1/analyses/{id}/debt` | TDP effort, TDI hours, and estimated cost breakdown |
-| `GET` | `/api/v1/analyses/{id}/explanations` | Component-level SHAP feature attributions |
-| `GET` | `/api/v1/models` | List active model metadata and feature schemas |
-
-<details>
-<summary><b>📋 Example: Triggering Analysis via cURL</b></summary>
-
-```bash
-# Submit local repository analysis
-curl -X POST http://localhost:8000/api/v1/analyze \
-  -H "Content-Type: application/json" \
-  -d '{
-    "local_path": "/path/to/my-java-app",
-    "mode": "full",
-    "max_history_commits": 100
-  }'
-
-# Response:
-# {
-#   "analysis_id": "a58f4ae8-de23-485c-917a-64448ba129cb",
-#   "repository_name": "my-java-app",
-#   "status": "queued",
-#   "progress_percentage": 0,
-#   ...
-# }
-```
-</details>
+Interactive documentation is available at `/docs` and `/redoc` when the backend is running.
 
 ---
 
-## ⚙️ Environment Variables
+## ⚙️ Configuration
 
-Configuration is loaded from environment variables or a root `.env` file. Copy the example configuration to customize parameters:
+DebtOx reads configuration from environment variables and/or a root `.env` file.
+
+For local configuration:
 
 ```bash
 cp .env.example .env
 ```
 
-<details>
-<summary><b>⚙️ View All Configuration Options</b></summary>
+Do not commit real secrets or credentials.
 
-| Variable | Default | Description |
-| :--- | :--- | :--- |
-| `PROJECT_NAME` | `DebtOx` | Display name of the application |
-| `VERSION` | `1.0.0` | Application release version |
-| `API_V1_PREFIX` | `/api/v1` | URL routing prefix for REST API |
-| `DATABASE_URL` | `sqlite:///debtox.db` | Analysis database URI |
-| `MAX_REPOSITORY_SIZE_MB` | `500` | Maximum allowed repository size |
-| `MAX_FILES` | `10000` | Maximum total files scanned per job |
-| `MAX_JAVA_FILES` | `5000` | Maximum `.java` files parsed per job |
-| `MAX_ANALYSIS_TIME_SECONDS` | `600` | Maximum execution timeout (seconds) |
-| `MAX_HISTORY_COMMITS` | `500` | Maximum Git commits mined for TDI churn |
-| `COCOMO_A` | `2.94` | COCOMO II maintenance effort multiplier |
-| `COCOMO_E` | `1.05` | COCOMO II maintenance scale exponent |
-| `DEFAULT_DEVELOPER_HOURLY_RATE` | `65.0` | Blended developer rate ($/hr) for debt cost |
-</details>
+Common settings include repository size/file limits, Git history depth, API configuration, and technical-debt model parameters. Check `.env.example` for the current project configuration.
 
 ---
 
 ## 🧪 Testing
 
-DebtOx includes a comprehensive test suite covering AST parsing, debt formulas, API routing, and end-to-end execution:
+Run the backend test suite with:
 
 ```bash
-# Run tests with pytest
 pytest backend/tests/ -v
+```
 
-# Or using Makefile
+Or:
+
+```bash
 make test
 ```
 
-```text
-backend/tests/test_metrics.py         ✓ AST Parsing, CK & Halstead Metrics
-backend/tests/test_debt_engines.py     ✓ COCOMO II TDP, TDI Churn & Risk Scoring
-backend/tests/test_api_integration.py  ✓ FastAPI Routes, Health & Job Dispatching
-backend/tests/test_e2e_pipeline.py     ✓ Full End-to-End Analysis Workflow
-```
+The tests cover areas including metric extraction, debt engines, API behavior, and end-to-end analysis.
 
 ---
 
 ## ⚠️ Known Limitations
 
-- **Language Scope**: Currently analyzes **Java** (`.java`) codebases only. Other languages are not parsed.
-- **AST Parser**: Powered by `javalang` (Java 8 through 17 syntax). Certain preview or very recent syntax constructs are skipped gracefully to prevent analysis failure.
-- **Git History Requirement**: Technical Debt Interest (TDI) calculations depend on commit history. When analyzing standalone folders without a `.git` database, TDI reports zero and analysis runs in snapshot mode.
-- **Model Fallback**: If serialized model binaries (`models/*.joblib`) are not loaded, DebtOx automatically switches to deterministic metric threshold baselines, ensuring the platform remains fully functional.
+- **Java only:** DebtOx currently analyzes Java source code.
+- **Parser scope:** The analyzer relies on `javalang`; some newer Java syntax may not be fully supported.
+- **Git-dependent analysis:** TDI requires Git history. Plain source folders can still be analyzed, but longitudinal churn information is unavailable.
+- **Model availability:** When trained model artifacts are unavailable, DebtOx can fall back to deterministic metric-based rules where supported.
+- **Technical debt estimates:** TDP is a model-based engineering effort estimate, not stopwatch-measured developer time.
 
 ---
 
 ## 📚 Research Context
 
-DebtOx was developed as part of empirical software engineering research investigating machine learning techniques for code smell detection, parametric software maintenance modeling (COCOMO II), and longitudinal technical debt tracking.
+DebtOx is also used as the implementation platform for empirical research on machine-learning-based code smell detection, software maintenance effort modeling, and longitudinal technical debt analysis.
+
+Research artifacts and experiment outputs are maintained separately from the core application workflow.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
